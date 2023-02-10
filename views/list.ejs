@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>To do Lists</title>
 </head>
 <body>
@@ -13,18 +14,25 @@
         <h1 style="color:blue"><%=kindofday %> Todo List</h1>
     <% } %>
      -->
-     <h1><%=kindofday%></h1>
-     <ul>
-        
-        
+     <div class="box" id="heading">
+        <h1><%=kindofday%></h1>
+     </div>
+     <div class="box">
         <%for(var i=0;i<newlistitems.length;i++){ %>
-            <li><%=newlistitems[i]%></li>
-
-       <% } %>
-     </ul>
-    <form class="" action="/" method="post">
-        <input type="text" name="newItem">
-        <button type="submit" name="button">Add</button>
-    </form>
+            <div class="item">
+                <input type="checkbox">
+                <p><%=newlistitems[i]%></p>
+            </div>   
+            
+    
+           <% } %>
+         </ul >
+         <form class="item" action="/" method="post">
+            <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+            <button type="submit" name="button">+</button>
+        </form>
+     </div>
+     
+    
 </body>
 </html> 

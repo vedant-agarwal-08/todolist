@@ -6,6 +6,7 @@ const app=express();
 var items=["Buy Food","Cook Food","Eat Food"];
 app.set('view engine', 'ejs');
 app.use(bodyparser.urlencoded({extended:true}));
+app.use(express.static("public"));
 app.get("/",function(req,res){
     var today=new Date();
     var options={
